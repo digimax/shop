@@ -55,7 +55,7 @@ public class DomainObject implements Serializable {
 
     @Id
     @Column(unique = true)
-    @GenericGenerator(name="random_id", strategy="com.digimax.shop.structural.domain.RandomIdGenerator")
+    @GenericGenerator(name="random_id", strategy="shop.digimax.com.structural.domain.RandomIdGenerator")
     @GeneratedValue(generator = "random_id")
     @NonVisual
     public Long id;

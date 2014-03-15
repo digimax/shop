@@ -3,11 +3,14 @@ package shop.digimax.com.services;
 import java.io.IOException;
 
 import org.apache.tapestry5.*;
+import org.apache.tapestry5.hibernate.HibernateTransactionAdvisor;
 import org.apache.tapestry5.ioc.MappedConfiguration;
+import org.apache.tapestry5.ioc.MethodAdviceReceiver;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.Contribute;
 import org.apache.tapestry5.ioc.annotations.Local;
+import org.apache.tapestry5.ioc.annotations.Match;
 import org.apache.tapestry5.ioc.services.ApplicationDefaults;
 import org.apache.tapestry5.ioc.services.SymbolProvider;
 import org.apache.tapestry5.services.*;
@@ -15,6 +18,7 @@ import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.StackExtension;
 import org.apache.tapestry5.services.javascript.StackExtensionType;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This module is automatically included as part of the Tapestry IoC Registry, it's a good place to
@@ -22,6 +26,23 @@ import org.slf4j.Logger;
  */
 public class AppModule
 {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AppModule.class);
+
+    public AppModule() {
+        super();
+        try {
+            Class driverObject = Class.forName("org.hsqldb.jdbcDriver");
+        } catch (ClassNotFoundException e) {
+            LOGGER.debug("Can't find the JDBC driver", e);
+        }
+    }
+
+    @Match("*Service")
+    public static void adviseTransactions(HibernateTransactionAdvisor advisor, MethodAdviceReceiver receiver)
+    {
+        advisor.addTransactionCommitAdvice(receiver);
+    }
+
     public static void bind(ServiceBinder binder)
     {
         // binder.bind(MyServiceInterface.class, MyServiceImpl.class);
