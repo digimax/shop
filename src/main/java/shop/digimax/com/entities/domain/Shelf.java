@@ -8,5 +8,6 @@ import javax.persistence.Entity;
  * Created by jon on 2014-03-15.
  */
 @Entity
-public class Shelf extends DomainObject {
+public class Shelf extends AbstractLocation {
+
 }
