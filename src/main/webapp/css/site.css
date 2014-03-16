@@ -1,0 +1,14 @@
+.navbar-inverse {
+    background-color: #2a6496;
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background-color: #5bc0de;
+}
+
+.navbar .nav li.active {
+    background-image: none;
+    background: #2a6496;
+    font-style: italic;
+    border: 1px greenyellow solid;
+}

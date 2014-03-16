@@ -10,7 +10,7 @@ import org.apache.tapestry5.SymbolConstants;
  * Layout component for pages of application test-project.
  */
 @Import(
-        stylesheet = {"context:css/bootswatch.less"},
+        stylesheet = {"context:css/bootswatch.less", "context:css/site.css"},
         library = {"context:mybootstrap/dist/js/bootstrap.js"})
 public class Layout
 {
