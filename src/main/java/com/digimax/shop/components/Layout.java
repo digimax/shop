@@ -9,7 +9,9 @@ import org.apache.tapestry5.SymbolConstants;
 /**
  * Layout component for pages of application test-project.
  */
-@Import(stylesheet = {"context:css/bootswatch.less"})
+@Import(
+        stylesheet = {"context:css/bootswatch.less"},
+        library = {"context:mybootstrap/dist/js/bootstrap.js"})
 public class Layout
 {
 	@Inject
@@ -43,5 +45,9 @@ public class Layout
 	{
 		return new String[]{"Index", "About", "Contact"};
 	}
+
+//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css
+//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css
+////netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js
 
 }
