@@ -2,8 +2,11 @@
     background-color: #2a6496;
 }
 
-.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
-    background-color: #5bc0de;
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background-color: #2a6496;
+    /*background-color: #5bc0de;*/
 }
 
 .navbar-inverse .navbar-nav > .active > a:active,
