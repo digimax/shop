@@ -9,6 +9,7 @@ import org.apache.tapestry5.SymbolConstants;
 /**
  * Layout component for pages of application test-project.
  */
+@Import(stylesheet = {"context:css/bootswatch.less"})
 public class Layout
 {
 	@Inject
