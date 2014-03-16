@@ -121,20 +121,20 @@ of testing facilities designed for use with TestNG (http://testng.org/), so it's
             <scope>test</scope>
         </dependency>
 
-        <!-- Provided by the servlet container, but sometimes referenced in the application
-       code. -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>${servlet-api-release-version}</version>
-            <scope>provided</scope>
-        </dependency>
-
         <!-- Provide dependency to the Tapestry javadoc taglet which replaces the Maven component report -->
         <dependency>
             <groupId>org.apache.tapestry</groupId>
             <artifactId>tapestry-javadoc</artifactId>
             <version>${tapestry-release-version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+            <!-- Provided by the servlet container, but sometimes referenced in the application
+           code. -->
+        <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>3.0.20100224</version>
             <scope>provided</scope>
         </dependency>
 
@@ -256,10 +256,8 @@ of testing facilities designed for use with TestNG (http://testng.org/), so it's
 
     <properties>
         <tapestry-release-version>5.4-beta-3</tapestry-release-version>
-        <servlet-api-release-version>2.5</servlet-api-release-version>
         <testng-release-version>6.5.2</testng-release-version>
         <easymock-release-version>3.0</easymock-release-version>
-        <slf4j-release-version>1.7.2</slf4j-release-version>
-
+        <slf4j-release-version>1.7.5</slf4j-release-version>
     </properties>
 </project>
