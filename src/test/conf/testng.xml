@@ -2,7 +2,7 @@
 <suite name="shop Application Test Suite" annotations="1.5">
     <test name="Unit Tests">
         <packages>
-            <package name="shop.digimax.com"/>
+            <package name="com.digimax.shop"/>
         </packages>
     </test>
 </suite>

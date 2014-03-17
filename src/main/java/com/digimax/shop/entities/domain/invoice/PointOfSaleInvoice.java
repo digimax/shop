@@ -6,5 +6,5 @@ import javax.persistence.Entity;
  * Created by jon on 2014-03-16.
  */
 @Entity
-public class PointOfSaleInvoice implements Invoice {
+public class PointOfSaleInvoice extends AbstractInvoice {
 }

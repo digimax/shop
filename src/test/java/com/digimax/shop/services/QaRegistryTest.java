@@ -27,7 +27,13 @@ public abstract class QaRegistryTest {
 
     @BeforeClass
     public void oneTimeSetUp() {
-        registry = new RegistryBuilder().add(TapestryModule.class,
+        try {
+            Class.forName("org.hsqldb.jdbcDriver");
+        } catch (ClassNotFoundException e) {
+            logger.debug("Can't find the JDBC driver", e);
+        }
+        registry = new RegistryBuilder().add(
+                TapestryModule.class,
                 HibernateCoreModule.class,
                 HibernateModule.class,
                 DependencyModule.class,
