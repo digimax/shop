@@ -49,5 +49,4 @@ public abstract class QaRegistryTest {
     public void shutdown() {
         registry.shutdown();
     }
-
 }
