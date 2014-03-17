@@ -14,6 +14,10 @@ import javax.persistence.*;
 public class User extends DomainObject {
 
     @Property
+    @OneToOne(cascade = CascadeType.ALL)
+    public Identity identity = new Identity();
+
+    @Property
     @Validate("required, minlength=2")
     public String firstName;
 
