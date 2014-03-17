@@ -10,4 +10,5 @@ public interface Location {
 
     Set<LineItem> getLineItems();
     List<Item> getItems();
+    Set<Shelf> getShelves();
 }

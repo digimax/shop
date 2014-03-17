@@ -24,4 +24,9 @@ public class AbstractLocation extends DomainObject implements Location {
     public List<Item> getItems() {
         return null;
     }
+
+    @Override
+    public Set<Shelf> getShelves() {
+        return null;
+    }
 }
