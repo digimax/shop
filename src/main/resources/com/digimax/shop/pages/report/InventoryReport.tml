@@ -1,5 +1,5 @@
-<html t:type="layout" title="shop.digimax.com"
+<html t:type="layout" title="Contact shop.digimax.com"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
       xmlns:p="tapestry:parameter">
-    <h1>${shop.name}</h1>
+    <h1>Inventory Report</h1>
 </html>
