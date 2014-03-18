@@ -18,7 +18,9 @@ public class BookStoreBootStrapServiceImpl implements BootStrapService {
         Shop shop = shopService.getCurrentShop();
         if (shop==null) {
             shop = new Shop();
-            shop.name="Memorial Book Shop";
+            shop.name="Memories Book Shop";
+            shop.brand="MBS";
+            shop.copyright="&#x00A9; Memories Book Shop 2014. All rights reserved.";
             addWorkersTo(shop);
             addBooksTo(shop);
             shopService.save(shop);

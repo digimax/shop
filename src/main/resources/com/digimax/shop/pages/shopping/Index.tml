@@ -2,4 +2,5 @@
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
       xmlns:p="tapestry:parameter">
     <h1>${shop.name}</h1>
+    <span t:type="domain/shopui" shop="shop"/>
 </html>

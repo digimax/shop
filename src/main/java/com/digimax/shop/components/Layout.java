@@ -1,5 +1,6 @@
 package com.digimax.shop.components;
 
+import com.digimax.shop.services.domain.ShopService;
 import org.apache.tapestry5.*;
 import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.ioc.annotations.*;
@@ -12,8 +13,12 @@ import org.apache.tapestry5.SymbolConstants;
 @Import(
         stylesheet = {"context:css/bootswatch.less", "context:css/site.css"},
         library = {"context:mybootstrap/dist/js/bootstrap.js"})
-public class Layout
-{
+public class Layout {
+
+    @Inject
+    @Property
+    private ShopService shopService;
+
 	@Inject
 	private ComponentResources resources;
 
@@ -31,20 +36,6 @@ public class Layout
 	@Inject
 	@Symbol(SymbolConstants.APPLICATION_VERSION)
 	private String appVersion;
-
-
-
-	public String getClassForPageName()
-	{
-		return resources.getPageName().equalsIgnoreCase(pageName)
-				? "active"
-				: null;
-	}
-
-	public String[] getPageNames()
-	{
-		return new String[]{"Index", "About", "Contact"};
-	}
 
 //netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css
 //netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css

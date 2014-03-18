@@ -1,5 +1,7 @@
 package com.digimax.shop.entities.domain;
 
+import org.apache.tapestry5.annotations.Property;
+
 import javax.persistence.Entity;
 
 /**
@@ -7,4 +9,11 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Shop extends AbstractLocation {
+
+    @Property
+    public String copyright;
+
+    @Property
+    public String brand;
+
 }

@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a t:type="pagelink" page="index" class="navbar-brand">Brand</a>
+                <a t:type="pagelink" page="index" class="navbar-brand">${shopService.currentShop.brand}</a>
             </div>
             <div class="navbar-collapse collapse navbar-inverse-collapse">
                 <ul class="nav navbar-nav">

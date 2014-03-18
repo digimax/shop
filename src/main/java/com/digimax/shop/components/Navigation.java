@@ -2,6 +2,7 @@ package com.digimax.shop.components;
 
 import com.digimax.shop.pages.report.GeneralLedgerReport;
 import com.digimax.shop.pages.report.InventoryReport;
+import com.digimax.shop.services.domain.ShopService;
 import org.apache.commons.lang.WordUtils;
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.annotations.Property;
@@ -16,6 +17,10 @@ import java.util.List;
  * Created by jon on 2014-03-18.
  */
 public class Navigation {
+
+    @Inject
+    @Property
+    private ShopService shopService;
 
     @Inject
     private PageRenderLinkSource pageRenderLinkSource;

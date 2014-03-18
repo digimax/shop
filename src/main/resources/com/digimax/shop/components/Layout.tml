@@ -42,7 +42,7 @@
         <t:body />
         <hr />
         <footer>
-            <p>&copy; Your Company 2014</p>
+            <p><span t:type="outputraw" value="shopService.currentShop.copyright"/></p>
         </footer>
     </div> <!-- /container -->
 </body>
