@@ -1,5 +1,7 @@
 package com.digimax.shop.services.domain;
 
+import com.digimax.shop.entities.domain.Shop;
+import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.hibernate.Session;
 
 /**
@@ -7,4 +9,7 @@ import org.hibernate.Session;
  */
 public interface ShopService {
     Session getSession();
+    Shop getCurrentShop();
+    @CommitAfter
+    Shop save(Shop shop);
 }
