@@ -1,6 +1,10 @@
 package com.digimax.shop.entities.domain;
 
+import org.apache.tapestry5.annotations.Property;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 import java.util.Set;
 
 /**
@@ -9,6 +13,9 @@ import java.util.Set;
 @Entity
 public class Shelf extends AbstractLocation {
 
+    @Property
+    @ManyToOne(fetch = FetchType.EAGER)
+    public AbstractLocation location;
 
     @Override
     public Set<Shelf> getShelves() {

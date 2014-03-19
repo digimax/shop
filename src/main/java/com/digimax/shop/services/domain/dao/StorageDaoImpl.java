@@ -1,7 +1,6 @@
 package com.digimax.shop.services.domain.dao;
 
-import com.digimax.shop.entities.domain.Shop;
-import com.digimax.shop.entities.domain.Storage;
+import com.digimax.shop.entities.domain.Store;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -18,48 +17,48 @@ public class StorageDaoImpl implements StorageDao {
     private Session session;
 
     @Override
-    public List<Storage> getAll() {
-        List<Storage> storages = session.createCriteria(Storage.class).list();
-        return storages;
+    public List<Store> getAll() {
+        List<Store> stores = session.createCriteria(Store.class).list();
+        return stores;
     }
 
     @Override
-    public Storage get(Long id) {
-        return (Storage) session.get(Storage.class, id);
+    public Store get(Long id) {
+        return (Store) session.get(Store.class, id);
     }
 
     @Override
     public boolean exists(Long id) {
-        Storage storage = (Storage) session.load(Storage.class, id);
-        return (storage!=null);
+        Store store = (Store) session.load(Store.class, id);
+        return (store !=null);
     }
 
     @Override
-    public Storage save(Storage storage) {
-        session.save(storage);
-        return storage;
+    public Store save(Store store) {
+        session.save(store);
+        return store;
     }
 
     @Override
     public void remove(Long id) {
-        Storage storage = (Storage) session.load(Storage.class, id);
-        session.delete(storage);
+        Store store = (Store) session.load(Store.class, id);
+        session.delete(store);
     }
 
     @Override
-    public void remove(Storage storage) {
-        session.delete(storage);
+    public void remove(Store store) {
+        session.delete(store);
     }
 
     @Override
-    public List<Storage> getAllDistinct() {
-        List<Storage> all = getAll();
-        Set<Storage> uniqueSet = new HashSet<>(all);
+    public List<Store> getAllDistinct() {
+        List<Store> all = getAll();
+        Set<Store> uniqueSet = new HashSet<>(all);
         return new ArrayList<>(uniqueSet);
     }
 
     @Override
-    public List<Storage> findByNamedQuery(String queryName, Map<String, Object> queryParams) {
+    public List<Store> findByNamedQuery(String queryName, Map<String, Object> queryParams) {
         Query q = session.getNamedQuery(queryName);
 
         String []params = new String[queryParams.size()];
@@ -75,6 +74,6 @@ public class StorageDaoImpl implements StorageDao {
                 q.setParameter(params[j], values[j]);
             }
         }
-        return (List<Storage>)q.list();
+        return (List<Store>)q.list();
     }
 }

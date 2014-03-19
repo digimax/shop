@@ -7,11 +7,8 @@
         <property name="connection.driver_class">
             org.hsqldb.jdbcDriver
         </property>
-        <!--<property name="connection.url">-->
-        <!--jdbc:hsqldb:mem:test-->
-        <!--</property>-->
+
         <property name="connection.url">
-            <!--jdbc:hsqldb:file:./target/work/ncapsuld;shutdown=true;create=true;hsqldb.sqllog=3-->
             jdbc:hsqldb:file:/dig/wrk/digimaxComOpenSource/apps/shop/db/shop;shutdown=true;create=true;hsqldb.sqllog=3
         </property>
         <property name="connection.username">sa</property>
