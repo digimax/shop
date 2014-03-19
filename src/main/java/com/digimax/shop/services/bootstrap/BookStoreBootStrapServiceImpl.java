@@ -24,7 +24,7 @@ public class BookStoreBootStrapServiceImpl implements BootStrapService {
             shop = new Shop();
             shop.name="Memories Book Shop";
             shop.brand="MBS";
-            shop.copyright="&#x00A9; 2014 &nbsp; Memories Book Shop.&nbsp; All rights reserved.";
+            shop.copyright="&#x00A9; 2014 Memories Book Shop.&nbsp; All rights reserved.";
             addLocationsTo(shop);
             addWorkersTo(shop);
             addBooksTo(shop);

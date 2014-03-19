@@ -1,0 +1,18 @@
+<html t:type="layout" title="Contact shop.digimax.com"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+    <span>
+        <t:if test="receiving">
+            <span t:type="domain/receivingui" receiving="store"/>
+        </t:if>
+        <t:if test="shipping">
+            <span t:type="domain/shippingui" shipping="shipping"/>
+        </t:if>
+        <t:if test="store">
+            <span t:type="domain/storeui" store="store"/>
+        </t:if>
+        <t:if test="warehouse">
+            <span t:type="domain/warehouseui" warehouse="warehouse"/>
+        </t:if>
+    </span>
+</html>
