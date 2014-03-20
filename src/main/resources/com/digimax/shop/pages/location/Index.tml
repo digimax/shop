@@ -3,16 +3,19 @@
       xmlns:p="tapestry:parameter">
     <span>
         <t:if test="receiving">
-            <span t:type="domain/receivingui" receiving="store"/>
+            <span t:type="domain/receivingui" receiving="location"/>
+        </t:if>
+        <t:if test="shelf">
+            <span t:type="domain/shelfui" shelf="location"/>
         </t:if>
         <t:if test="shipping">
-            <span t:type="domain/shippingui" shipping="shipping"/>
+            <span t:type="domain/shippingui" shipping="location"/>
         </t:if>
         <t:if test="store">
-            <span t:type="domain/storeui" store="store"/>
+            <span t:type="domain/storeui" store="location"/>
         </t:if>
         <t:if test="warehouse">
-            <span t:type="domain/warehouseui" warehouse="warehouse"/>
+            <span t:type="domain/warehouseui" warehouse="location"/>
         </t:if>
     </span>
 </html>

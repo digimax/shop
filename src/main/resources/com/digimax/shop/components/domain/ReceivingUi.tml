@@ -2,20 +2,6 @@
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
-<h4>Receiving - ${receiving.name}</h4>
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">Locations</h3>
-    </div>
-    <div class="panel-body">
-        <div class="list-group">
-            <a href="#" class="list-group-item active">
-                Choose a location
-            </a>
-            <t:loop source="receiving.locations" value="location">
-                <a t:type="pagelink" page="index" context="location.id" class="list-group-item">${location.name}</a>
-            </t:loop>
-        </div>
-    </div>
-</div>
+    <h4>Receiving - ${receiving.name}</h4>
+    <span t:type="domain/locationui" location="receiving"/>
 </html>

@@ -12,7 +12,7 @@ import org.apache.tapestry5.SymbolConstants;
  */
 @Import(
         stylesheet = {"context:css/bootswatch.less", "context:css/site.css"},
-        library = {"context:mybootstrap/dist/js/bootstrap.js"})
+        library = {"context:mybootstrap/dist/js/bootstrap.js", "context:js/site.js"})
 public class Layout {
 
     @Inject

@@ -1,5 +1,7 @@
 package com.digimax.shop.entities.domain;
 
+import com.digimax.shop.entities.user.Worker;
+
 import java.util.List;
 import java.util.Set;
 
@@ -8,7 +10,8 @@ import java.util.Set;
  */
 public interface Location {
 
+    void addLocation(AbstractLocation location);
+    void addWorker(Worker worker);
     Set<LineItem> getLineItems();
     List<Item> getItems();
-    Set<Shelf> getShelves();
 }

@@ -21,6 +21,10 @@ public class Index {
         return Shipping.class.isInstance(location);
     }
 
+    public boolean isShelf() {
+        return Shelf.class.isInstance(location);
+    }
+
     public boolean isStore() {
         return Store.class.isInstance(location);
     }

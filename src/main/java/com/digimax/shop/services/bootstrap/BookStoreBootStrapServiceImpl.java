@@ -1,8 +1,10 @@
 package com.digimax.shop.services.bootstrap;
 
 import com.digimax.shop.entities.domain.*;
+import com.digimax.shop.entities.user.Worker;
 import com.digimax.shop.services.domain.LocationService;
 import com.digimax.shop.services.domain.ShopService;
+import com.digimax.shop.services.user.UserService;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 /**
@@ -16,6 +18,9 @@ public class BookStoreBootStrapServiceImpl implements BootStrapService {
     @Inject
     private ShopService shopService;
 
+    @Inject
+    private UserService userService;
+
     @Override
     public boolean bootUp() {
         //check to see if there is a persisted shop
@@ -25,6 +30,7 @@ public class BookStoreBootStrapServiceImpl implements BootStrapService {
             shop.name="Memories Book Shop";
             shop.brand="MBS";
             shop.copyright="&#x00A9; 2014 Memories Book Shop.&nbsp; All rights reserved.";
+            shopService.save(shop);
             addLocationsTo(shop);
             addWorkersTo(shop);
             addBooksTo(shop);
@@ -48,17 +54,17 @@ public class BookStoreBootStrapServiceImpl implements BootStrapService {
 
 
         //Store
-        AbstractLocation store = new Store();
+        Store store = new Store();
         store.name = "Store";
         locationService.save(store);
 
         //Receiving
-        AbstractLocation receiving = new Receiving();
+        Receiving receiving = new Receiving();
         receiving.name = "Receiving";
         locationService.save(receiving);
 
         //Shipping
-        AbstractLocation shipping = new Shipping();
+        Shipping shipping = new Shipping();
         shipping.name = "Shipping";
         locationService.save(shipping);
 
@@ -74,6 +80,9 @@ public class BookStoreBootStrapServiceImpl implements BootStrapService {
     }
 
     private void addWorkersTo(Shop shop) {
-
+        //Owner
+        Worker owner = new Worker("Williams", "Jonathan", "jon@digimax.com");
+        userService.save(owner);
+        shop.getReceiving().addWorker(owner);
     }
 }

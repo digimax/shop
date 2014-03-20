@@ -2,6 +2,6 @@
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
-    <h4>Shop - ${shop.name}</h4>
-    <span t:type="domain/locationui" location="shop"/>
+    <h4>Warehouse - ${warehouse.name}</h4>
+    <span t:type="domain/locationui" location="warehouse"/>
 </html>

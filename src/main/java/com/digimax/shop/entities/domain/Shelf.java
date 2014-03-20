@@ -13,12 +13,4 @@ import java.util.Set;
 @Entity
 public class Shelf extends AbstractLocation {
 
-    @Property
-    @ManyToOne(fetch = FetchType.EAGER)
-    public AbstractLocation location;
-
-    @Override
-    public Set<Shelf> getShelves() {
-        return null;
-    }
 }

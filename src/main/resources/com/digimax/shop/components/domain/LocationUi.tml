@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">${location.name} Locations</h3>
+        </div>
+        <div class="panel-body">
+            <span t:type="breadcrumb"/>
+            <div class="list-group">
+                <a href="javascript:nothing()" class="list-group-item active">
+                    <t:if test="hasLocations()">
+                        Choose a location
+                        <p:else>
+                            No sub-locations
+                        </p:else>
+                    </t:if>
+                </a>
+                <t:loop source="location.locations" value="thisLocation">
+                    <a t:type="pagelink" page="location/index" context="thisLocation.id" class="list-group-item">${thisLocation.name}</a>
+                </t:loop>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">${location.name} Workers</h3>
+        </div>
+        <div class="panel-body">
+            <div class="list-group">
+                <a href="javascript:nothing()" class="list-group-item active">
+                    <t:if test="hasWorkers()">
+                        Choose a worker
+                        <p:else>
+                            No workers
+                        </p:else>
+                    </t:if>
+                </a>
+                <t:loop source="location.workers" value="thisWorker">
+                    <a t:type="pagelink" page="user/index" context="thisWorker.id" class="list-group-item">${thisWorker.fullName}</a>
+                </t:loop>
+            </div>
+        </div>
+    </div>
+</html>
