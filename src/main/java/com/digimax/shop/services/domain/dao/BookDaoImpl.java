@@ -1,9 +1,12 @@
 package com.digimax.shop.services.domain.dao;
 
 import com.digimax.shop.entities.domain.item.Book;
+import com.digimax.shop.entities.user.Author;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.*;
 
@@ -75,5 +78,26 @@ public class BookDaoImpl implements BookDao {
             }
         }
         return (List<Book>)q.list();
-    }    
+    }
+
+    @Override
+    public Book findBook(Book searchBook) {
+        if (searchBook.authors==null)
+            return null;
+        Author author = (searchBook.authors.size()>0)?(Author)searchBook.authors.toArray()[0]:null;
+        Criterion condition = null;
+        if (author==null) {
+//            condition = Restrictions.conjunction().add(Restrictions.eq("title", searchBook.title));
+            return null;
+        } else {
+            condition =
+                    Restrictions.conjunction().add(Restrictions.eq("name", searchBook.name))
+//                        .add(Restrictions.eq("subTitle", searchBook.subTitle))
+                            .add(Restrictions.eq("authorz.lastName", author.lastName))
+                            .add(Restrictions.eq("authorz.firstName", author.firstName));
+        }
+//        List<Book> foundBooks = session.createCriteria(Book.class).createAlias("authors", "authorz").add(condition).list();
+        Book foundBook = (Book) session.createCriteria(Book.class).createAlias("authors", "authorz").add(condition).uniqueResult();
+        return foundBook;
+    }
 }

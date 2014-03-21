@@ -54,15 +54,5 @@ public class AbstractLocation extends DomainObject implements Location {
     public void addInvoice(AbstractInvoice invoice) {
         invoices.add(invoice);
         invoice.location = this;
-    }    
-    
-    @Override
-    public Set<LineItem> getLineItems() {
-        return null;
-    }
-
-    @Override
-    public List<AbstractItem> getItems() {
-        return null;
     }
 }

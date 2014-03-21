@@ -2,10 +2,7 @@ package com.digimax.shop.services;
 
 import com.digimax.shop.services.bootstrap.BookStoreBootStrapServiceImpl;
 import com.digimax.shop.services.bootstrap.BootStrapService;
-import com.digimax.shop.services.domain.BookService;
-import com.digimax.shop.services.domain.ItemService;
-import com.digimax.shop.services.domain.LocationService;
-import com.digimax.shop.services.domain.ShopService;
+import com.digimax.shop.services.domain.*;
 import com.digimax.shop.services.domain.dao.*;
 import com.digimax.shop.services.domain.invoice.InvoiceService;
 import com.digimax.shop.services.domain.invoice.dao.AbstractInvoiceDao;
@@ -63,21 +60,23 @@ public class DependencyModule {
         // is provided inline, or requires more initialization than simply
         // invoking the constructor.
         binder.bind(BootStrapService.class, BookStoreBootStrapServiceImpl.class);
+        binder.bind(AuthorDao.class);
         binder.bind(BookDao.class);
+        binder.bind(IdentityDao.class);
+        binder.bind(AbstractInvoiceDao.class);
+        binder.bind(AbstractItemDao.class);
+        binder.bind(AbstractLocationDao.class);
         binder.bind(ShelfDao.class);
         binder.bind(ShopDao.class);
         binder.bind(StorageDao.class);
+        binder.bind(UserDao.class);
+
+        binder.bind(AuthorService.class);
         binder.bind(BookService.class);
         binder.bind(InvoiceService.class);
         binder.bind(ItemService.class);
         binder.bind(LocationService.class);
         binder.bind(ShopService.class);
-
-        binder.bind(AbstractInvoiceDao.class);
-        binder.bind(AbstractItemDao.class);
-        binder.bind(AbstractLocationDao.class);
-        binder.bind(IdentityDao.class);
-        binder.bind(UserDao.class);
         binder.bind(IdentityService.class);
         binder.bind(UserService.class);
     }

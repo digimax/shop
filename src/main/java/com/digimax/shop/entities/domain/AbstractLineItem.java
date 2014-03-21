@@ -12,6 +12,7 @@ import java.math.BigDecimal;
  * Created by jon on 2014-03-20.
  */
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class AbstractLineItem extends DomainObject implements LineItem {
 
     @Property

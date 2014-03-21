@@ -15,6 +15,5 @@ public interface Location {
     void addInvoice(AbstractInvoice invoice);
     void addLocation(AbstractLocation location);
     void addWorker(Worker worker);
-    Set<LineItem> getLineItems();
-    List<AbstractItem> getItems();
+    String getName();
 }
