@@ -11,11 +11,15 @@
         <t:if test="shipping">
             <span t:type="domain/shippingui" shipping="location"/>
         </t:if>
+        <t:if test="shop">
+            <span t:type="domain/shopui" shop="location"/>
+        </t:if>
         <t:if test="store">
             <span t:type="domain/storeui" store="location"/>
         </t:if>
         <t:if test="warehouse">
             <span t:type="domain/warehouseui" warehouse="location"/>
         </t:if>
+
     </span>
 </html>

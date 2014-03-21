@@ -6,6 +6,6 @@ import javax.persistence.Entity;
  * Created by jon on 2014-03-16.
  */
 @Entity
-public class Book extends Item {
+public class Book extends AbstractItem {
 
 }

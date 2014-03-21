@@ -1,13 +1,8 @@
 package com.digimax.shop.entities.domain;
 
-import com.digimax.shop.structural.domain.DomainObject;
-
-import javax.persistence.Entity;
-
 /**
- * Created by jon on 2014-03-15.
+ * Created by jon on 2014-03-20.
  */
-@Entity
-public class Item extends DomainObject
-{
+public interface Item {
+    String getName();
 }

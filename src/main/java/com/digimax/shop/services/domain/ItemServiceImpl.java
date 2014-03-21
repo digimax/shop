@@ -1,6 +1,7 @@
 package com.digimax.shop.services.domain;
 
-import com.digimax.shop.services.domain.dao.BookDao;
+import com.digimax.shop.entities.domain.AbstractItem;
+import com.digimax.shop.services.domain.invoice.item.dao.AbstractItemDao;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 /**
@@ -8,4 +9,11 @@ import org.apache.tapestry5.ioc.annotations.Inject;
  */
 public class ItemServiceImpl implements ItemService {
 
+    @Inject
+    private AbstractItemDao abstractItemDao;
+
+    @Override
+    public AbstractItem save(AbstractItem item) {
+        return abstractItemDao.save(item);
+    }
 }

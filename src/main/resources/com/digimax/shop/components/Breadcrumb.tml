@@ -3,9 +3,10 @@
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter">
     <t:content>
         <ul class="breadcrumb" style="margin-bottom: 5px;">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
-            <li class="active">Data</li>
+            <li t:type="loop" source="parentLocations" value="thisLocation">
+                <a t:type="pagelink" page="location/index" context="thisLocation.id">${thisLocation.name}</a>
+            </li>
+            <li class="active">${location.name}</li>
         </ul>
     </t:content>
 </html>

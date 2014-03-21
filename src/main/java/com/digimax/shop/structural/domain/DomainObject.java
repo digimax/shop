@@ -60,9 +60,12 @@ public class DomainObject implements Serializable {
     @NonVisual
     public Long id;
 
-    @Property
+    @Property(read = false)
     @Validate("required, minlength=1")
     public String name;
+    public String getName() {
+        return name;
+    }
 
     public DomainObject() {
         super();

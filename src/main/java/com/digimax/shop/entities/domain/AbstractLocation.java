@@ -1,5 +1,6 @@
 package com.digimax.shop.entities.domain;
 
+import com.digimax.shop.entities.domain.invoice.AbstractInvoice;
 import com.digimax.shop.entities.user.Worker;
 import com.digimax.shop.structural.domain.DomainObject;
 import org.apache.tapestry5.annotations.Property;
@@ -31,6 +32,11 @@ public class AbstractLocation extends DomainObject implements Location {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "location")
     public Set<Worker> workers = new HashSet<>();
 
+    @Property
+    @NotNull
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "location")
+    public Set<AbstractInvoice> invoices = new HashSet<>();
+
     @Override
     public void addLocation(AbstractLocation location) {
         locations.add(location);
@@ -44,12 +50,18 @@ public class AbstractLocation extends DomainObject implements Location {
     }
 
     @Override
+    public void addInvoice(AbstractInvoice invoice) {
+        invoices.add(invoice);
+        invoice.location = this;
+    }    
+    
+    @Override
     public Set<LineItem> getLineItems() {
         return null;
     }
 
     @Override
-    public List<Item> getItems() {
+    public List<AbstractItem> getItems() {
         return null;
     }
 }

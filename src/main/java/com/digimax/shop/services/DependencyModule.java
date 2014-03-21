@@ -7,6 +7,9 @@ import com.digimax.shop.services.domain.ItemService;
 import com.digimax.shop.services.domain.LocationService;
 import com.digimax.shop.services.domain.ShopService;
 import com.digimax.shop.services.domain.dao.*;
+import com.digimax.shop.services.domain.invoice.InvoiceService;
+import com.digimax.shop.services.domain.invoice.dao.AbstractInvoiceDao;
+import com.digimax.shop.services.domain.invoice.item.dao.AbstractItemDao;
 import com.digimax.shop.services.user.IdentityService;
 import com.digimax.shop.services.user.UserService;
 import com.digimax.shop.services.user.dao.IdentityDao;
@@ -65,10 +68,13 @@ public class DependencyModule {
         binder.bind(ShopDao.class);
         binder.bind(StorageDao.class);
         binder.bind(BookService.class);
+        binder.bind(InvoiceService.class);
         binder.bind(ItemService.class);
         binder.bind(LocationService.class);
         binder.bind(ShopService.class);
 
+        binder.bind(AbstractInvoiceDao.class);
+        binder.bind(AbstractItemDao.class);
         binder.bind(AbstractLocationDao.class);
         binder.bind(IdentityDao.class);
         binder.bind(UserDao.class);

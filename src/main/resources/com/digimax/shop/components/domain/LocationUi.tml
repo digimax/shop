@@ -8,7 +8,7 @@
             <h3 class="panel-title">${location.name} Locations</h3>
         </div>
         <div class="panel-body">
-            <span t:type="breadcrumb"/>
+            <span t:type="breadcrumb" location="location"/>
             <div class="list-group">
                 <a href="javascript:nothing()" class="list-group-item active">
                     <t:if test="hasLocations()">
@@ -41,6 +41,27 @@
                 </a>
                 <t:loop source="location.workers" value="thisWorker">
                     <a t:type="pagelink" page="user/index" context="thisWorker.id" class="list-group-item">${thisWorker.fullName}</a>
+                </t:loop>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title">${location.name} Invoices</h3>
+        </div>
+        <div class="panel-body">
+            <div class="list-group">
+                <a href="javascript:nothing()" class="list-group-item active">
+                    <t:if test="hasInvoices()">
+                        Choose an invoice
+                        <p:else>
+                            No invoices
+                        </p:else>
+                    </t:if>
+                </a>
+                <t:loop source="location.invoices" value="thisInvoice">
+                    <a t:type="pagelink" page="invoice/index" context="thisInvoice.id" class="list-group-item">${thisInvoice.name}</a>
                 </t:loop>
             </div>
         </div>

@@ -8,5 +8,5 @@ import java.math.BigDecimal;
 public interface LineItem {
 
     BigDecimal getQuantity();
-    Item getItem();
+    AbstractItem getItem();
 }

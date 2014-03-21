@@ -1,0 +1,8 @@
+<html t:type="layout" title="Contact shop.digimax.com"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+    <h1>Invoice</h1>
+    <t:if test="receivingInvoice">
+        <span t:type="domain/invoice/receivinginvoiceui" receivingInvoice="invoice"/>
+    </t:if>
+</html>
