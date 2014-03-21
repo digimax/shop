@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<div class="btn-toolbar">
+    <div class="btn-group">
+        <button type="button" class="btn btn-default">d</button>
+        <button type="button" class="btn btn-default">e</button>
+        <button type="button" class="btn btn-default">f</button>
+    </div>
+</div>
+</html>
