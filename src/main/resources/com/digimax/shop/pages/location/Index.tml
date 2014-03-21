@@ -20,6 +20,5 @@
         <t:if test="warehouse">
             <span t:type="domain/warehouseui" warehouse="location"/>
         </t:if>
-
     </span>
 </html>

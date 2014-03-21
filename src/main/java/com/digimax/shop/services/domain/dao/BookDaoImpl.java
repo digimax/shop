@@ -1,7 +1,6 @@
 package com.digimax.shop.services.domain.dao;
 
-import com.digimax.shop.entities.domain.Book;
-import com.digimax.shop.entities.domain.Shop;
+import com.digimax.shop.entities.domain.item.Book;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Query;
 import org.hibernate.Session;

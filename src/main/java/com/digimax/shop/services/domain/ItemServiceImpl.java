@@ -1,6 +1,6 @@
 package com.digimax.shop.services.domain;
 
-import com.digimax.shop.entities.domain.AbstractItem;
+import com.digimax.shop.entities.domain.item.AbstractItem;
 import com.digimax.shop.services.domain.invoice.item.dao.AbstractItemDao;
 import org.apache.tapestry5.ioc.annotations.Inject;
 

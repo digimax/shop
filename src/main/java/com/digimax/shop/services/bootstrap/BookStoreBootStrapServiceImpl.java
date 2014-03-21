@@ -1,9 +1,9 @@
 package com.digimax.shop.services.bootstrap;
 
 import com.digimax.shop.entities.domain.*;
-import com.digimax.shop.entities.domain.invoice.AbstractInvoice;
 import com.digimax.shop.entities.domain.invoice.ReceivingInvoice;
 import com.digimax.shop.entities.domain.invoice.lineitem.ReceivingLineItem;
+import com.digimax.shop.entities.domain.item.Book;
 import com.digimax.shop.entities.user.Worker;
 import com.digimax.shop.services.domain.ItemService;
 import com.digimax.shop.services.domain.LocationService;

@@ -1,5 +1,9 @@
 <html t:type="layout" title="Contact shop.digimax.com"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
       xmlns:p="tapestry:parameter">
-<h1>Location Detail</h1>
+    <span>
+        <t:if test="book">
+            <span t:type="domain/item/bookui" book="item"/>
+        </t:if>
+    </span>
 </html>

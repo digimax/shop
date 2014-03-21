@@ -1,6 +1,6 @@
 package com.digimax.shop.services.domain.dao;
 
-import com.digimax.shop.entities.domain.Book;
+import com.digimax.shop.entities.domain.item.Book;
 import com.digimax.shop.structural.domain.GenericDao;
 
 /**

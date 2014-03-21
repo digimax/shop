@@ -9,9 +9,9 @@
         </div>
         <div class="panel-body">
             <t:grid source="invoice.orderedLineItems" row="thisLineItem" model="lineItemModel" inPlace="true">
-                <p:itemCell>
-                    ${thisLineItem.item?.name}
-                </p:itemCell>
+                <p:nameCell>
+                    <a t:type="pagelink" page="item/index" context="thisLineItem.item?.id">${thisLineItem.item?.name}</a>
+                </p:nameCell>
                 <!--<p:empty>-->
                     <!--<p>There are no users to display; you can <t:pagelink page="user/add">add some</a>.</p>-->
                 <!--</p:empty>-->

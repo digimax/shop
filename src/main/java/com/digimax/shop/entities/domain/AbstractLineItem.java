@@ -1,7 +1,7 @@
 package com.digimax.shop.entities.domain;
 
 import com.digimax.shop.entities.domain.invoice.AbstractInvoice;
-import com.digimax.shop.entities.domain.invoice.Invoice;
+import com.digimax.shop.entities.domain.item.AbstractItem;
 import com.digimax.shop.structural.domain.DomainObject;
 import org.apache.tapestry5.annotations.Property;
 

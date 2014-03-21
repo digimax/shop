@@ -1,7 +1,6 @@
 package com.digimax.shop.services.domain.invoice.item.dao;
 
-import com.digimax.shop.entities.domain.AbstractItem;
-import com.digimax.shop.entities.domain.invoice.AbstractInvoice;
+import com.digimax.shop.entities.domain.item.AbstractItem;
 import com.digimax.shop.structural.domain.GenericDao;
 
 /**

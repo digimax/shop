@@ -1,5 +1,7 @@
 package com.digimax.shop.entities.domain;
 
+import com.digimax.shop.entities.domain.item.AbstractItem;
+
 import java.math.BigDecimal;
 
 /**

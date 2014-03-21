@@ -1,4 +1,4 @@
-package com.digimax.shop.entities.domain;
+package com.digimax.shop.entities.domain.item;
 
 import javax.persistence.Entity;
 

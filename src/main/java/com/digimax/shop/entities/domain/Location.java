@@ -1,6 +1,7 @@
 package com.digimax.shop.entities.domain;
 
 import com.digimax.shop.entities.domain.invoice.AbstractInvoice;
+import com.digimax.shop.entities.domain.item.AbstractItem;
 import com.digimax.shop.entities.user.Worker;
 
 import java.util.List;
