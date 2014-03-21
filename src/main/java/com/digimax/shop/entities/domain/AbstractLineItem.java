@@ -16,6 +16,12 @@ import java.math.BigDecimal;
 public class AbstractLineItem extends DomainObject implements LineItem {
 
     @Property
+    transient public boolean selected;
+
+    @Property
+    public boolean processed;
+
+    @Property
     @ManyToOne(fetch = FetchType.EAGER)
     public AbstractInvoice invoice;
 

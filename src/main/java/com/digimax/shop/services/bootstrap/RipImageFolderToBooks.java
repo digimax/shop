@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by jon on 2014-03-21.

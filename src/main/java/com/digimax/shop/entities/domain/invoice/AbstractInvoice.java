@@ -20,6 +20,9 @@ import java.util.Set;
 public class AbstractInvoice extends DomainObject implements Invoice {
 
     @Property
+    public boolean closed;
+
+    @Property
     @ManyToOne(fetch = FetchType.EAGER)
     public AbstractLocation location;
 
@@ -36,5 +39,4 @@ public class AbstractInvoice extends DomainObject implements Invoice {
         lineItems.add(lineItem);
         lineItem.invoice = this;
     }
-
 }

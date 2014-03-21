@@ -16,4 +16,10 @@ public class InvoiceServiceImpl implements InvoiceService {
     public AbstractInvoice save(AbstractInvoice invoice) {
         return abstractInvoiceDao.save(invoice);
     }
+
+    @Override
+    public AbstractInvoice close(AbstractInvoice invoice) {
+        invoice.closed = true;
+        return save(invoice);
+    }
 }

@@ -5,5 +5,4 @@ package com.digimax.shop.entities.domain.invoice;
  */
 public interface Invoice {
 
-
 }

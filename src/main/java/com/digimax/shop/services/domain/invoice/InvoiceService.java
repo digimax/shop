@@ -10,5 +10,8 @@ import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 public interface InvoiceService {
 
     @CommitAfter
+    AbstractInvoice close(AbstractInvoice invoice);
+
+    @CommitAfter
     AbstractInvoice save(AbstractInvoice invoice);
 }

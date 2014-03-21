@@ -79,6 +79,7 @@ public class DependencyModule {
         binder.bind(ShopService.class);
         binder.bind(IdentityService.class);
         binder.bind(UserService.class);
+        binder.bind(WarehouseService.class);
     }
 
     public static void contributeFactoryDefaults(
