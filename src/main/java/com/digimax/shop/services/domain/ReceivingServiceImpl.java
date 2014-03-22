@@ -21,11 +21,11 @@ public class ReceivingServiceImpl implements ReceivingService {
             for (AbstractLineItem lineItem: receivingInvoice.getOrderedLineItems()) {
                 ReceivingLineItem receivingLineItem = ((ReceivingLineItem)lineItem);
                 String locationName = ((ReceivingLineItem)lineItem).locationName;
-                Shelf shelf = shelfService.findOrCreateShelf(receiving, locationName);
+                Shelf shelf = shelfService.findOrCreateShelf(receiving.locations.iterator().next(), locationName);
                 shelf.addItem(shelfService, receivingLineItem.item, receivingLineItem.quantity);
                 lineItem.processed = true;
             }
-            receivingInvoice.closed=true;
+            receivingInvoice.closed = true;
         }
     }
 }

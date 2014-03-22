@@ -121,6 +121,9 @@ public class ShelfDaoImpl implements ShelfDao {
         ShelfLineItem shelfLineItem = new ShelfLineItem();
         shelfLineItem.item = item;
         shelfLineItem.quantity = quantity;
+        shelf.lineItems.add(shelfLineItem);
+        shelfLineItem.shelf = shelf;
+        save(shelf);
         return shelfLineItem;
     }
 

@@ -20,4 +20,7 @@ public interface ShelfService {
 
     @CommitAfter
     AbstractLineItem addItem(Shelf shelf, AbstractItem item, BigDecimal quantity);
+
+    @CommitAfter
+    Shelf save(Shelf shelf);
 }

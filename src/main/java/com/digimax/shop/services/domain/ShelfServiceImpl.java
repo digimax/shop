@@ -26,4 +26,9 @@ public class ShelfServiceImpl implements ShelfService {
     public AbstractLineItem addItem(Shelf shelf, AbstractItem item, BigDecimal quantity) {
         return shelfDao.addItem(shelf, item, quantity);
     }
+
+    @Override
+    public Shelf save(Shelf shelf) {
+        return shelfDao.save(shelf);
+    }
 }

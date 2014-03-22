@@ -7,10 +7,7 @@ import com.digimax.shop.services.domain.ShelfService;
 import org.apache.tapestry5.annotations.Property;
 
 import javax.inject.Inject;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -24,7 +21,7 @@ public class Shelf extends AbstractLocation {
 
     @Property
     @NotNull
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "shelf")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "shelf")
     public Set<ShelfLineItem> lineItems = new HashSet<>();
 
     public AbstractLineItem addItem(ShelfService shelfService, AbstractItem item, BigDecimal quantity) {

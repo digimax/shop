@@ -2,8 +2,11 @@
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
-    <h4><a t:type="pagelink" page="location/index" context="receivingInvoice.location.id">Receiving</a> Invoice - ${receivingInvoice.name}</h4>
-    <span t:type="domain/invoice/invoiceui" invoice="receivingInvoice"/>
-    <span t:type="domain/invoice/invoicetool" invoice="receivingInvoice"/>
-    <span t:type="domain/invoice/receivinginvoicetool" receivingInvoice="receivingInvoice"/>
+    <t:zone t:id="invoiceZone">
+        <h4><a t:type="pagelink" page="location/index" context="receivingInvoice.location.id">Receiving</a> Invoice - ${receivingInvoice.name}</h4>
+        <span t:type="domain/invoice/invoiceui" invoice="receivingInvoice"/>
+        <span t:type="domain/invoice/invoicetool" invoice="receivingInvoice"/>
+        <span t:type="domain/invoice/receivinginvoicetool" receivingInvoice="receivingInvoice" refreshZone="invoiceZone"/>
+    </t:zone>
+
 </html>
