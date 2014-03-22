@@ -1,5 +1,6 @@
 package com.digimax.shop.services.bootstrap;
 
+import com.digimax.shop.entities.domain.item.AbstractItem;
 import com.digimax.shop.entities.domain.item.Book;
 import com.digimax.shop.entities.user.Author;
 import com.digimax.shop.services.domain.BookService;
@@ -9,7 +10,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Created by jon on 2014-03-21.
@@ -26,8 +29,9 @@ public class RipImageFolderToBooks {
             System.getProperty("com.digimax.shop.image.folder"): "/dig/wrk/maw_raw/app_images_folder/";
 
 
-    public static boolean rip(BookService bookService) {
+    public static Map<AbstractItem, String> rip(BookService bookService) {
         long startTime = System.currentTimeMillis();
+        Map<AbstractItem, String> itemLocationMap = new HashMap<>();
         File rootFolder = new File(BOOK_RIP_ROOT_FOLDER);
         Iterator<File> fileIterator = new RecursiveFileListIterator(rootFolder);
         while (fileIterator.hasNext()) {
@@ -110,6 +114,7 @@ public class RipImageFolderToBooks {
                     searchBook.authors.add(secondSearchAuthor);
                 }
                 Book book = bookService.findOrCreateBook(searchBook);
+                itemLocationMap.put(book, locationName);
 //                for (Image image : spineImages) {
 //                    image.item = book;
 //                }
@@ -126,6 +131,6 @@ public class RipImageFolderToBooks {
         }
         long finishTime = System.currentTimeMillis();
         LOGGER.debug("Elapsed time to RIP IMAGE FOLDER TO BOOK ITEMS {}secs", (finishTime-startTime)/1000);
-        return true;
+        return itemLocationMap;
     }
 }

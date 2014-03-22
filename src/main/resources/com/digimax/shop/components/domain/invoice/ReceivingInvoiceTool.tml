@@ -4,7 +4,7 @@
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
     <div class="btn-toolbar">
         <div class="btn-group">
-            <button type="button" class="btn btn-default">Receive Invoice to ${receivingInvoice.location?.name}</button>
+            <button t:type="actionlink" t:id="receiveInvoice" type="button" class="btn btn-default">Receive Invoice to ${receivingInvoice.location?.name}</button>
         </div>
     </div>
 </html>

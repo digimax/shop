@@ -18,7 +18,7 @@ import java.util.Set;
 public class Book extends AbstractItem {
 
     @Property
-    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     public Set<Author> authors = new HashSet<>();
 
     @Property

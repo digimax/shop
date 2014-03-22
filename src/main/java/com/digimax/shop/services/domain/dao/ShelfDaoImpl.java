@@ -1,11 +1,17 @@
 package com.digimax.shop.services.domain.dao;
 
+import com.digimax.shop.entities.domain.AbstractLineItem;
+import com.digimax.shop.entities.domain.AbstractLocation;
 import com.digimax.shop.entities.domain.Shelf;
-import com.digimax.shop.entities.domain.Shop;
+import com.digimax.shop.entities.domain.item.AbstractItem;
+import com.digimax.shop.entities.domain.lineitem.ShelfLineItem;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.criterion.Junction;
+import org.hibernate.criterion.Restrictions;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 /**
@@ -77,5 +83,46 @@ public class ShelfDaoImpl implements ShelfDao {
         }
         return (List<Shelf>)q.list();
     }
+
+    public Shelf findShelf(AbstractLocation location, String name) {
+        Junction junction = Restrictions.conjunction().add(Restrictions.eq("name", name));
+        if (location!=null) {
+            junction.add(Restrictions.eq("parent", location));
+//            junction.add(Restrictions.sqlRestriction("{alias}.parent_id = (?)", location.id, LongType.INSTANCE));
+
+        }
+        Shelf shelf  = (Shelf) session.createCriteria(Shelf.class).add(junction).uniqueResult();
+        return shelf;
+    }
+
+    public Shelf newShelf(AbstractLocation location, String name) {
+        Shelf shelf = new Shelf();
+        shelf.name = name;
+        location.addLocation(shelf);
+        return shelf;
+    }
+
+    public Shelf findOrCreateShelf(AbstractLocation location, String name) {
+        Shelf shelf = findShelf(location, name);
+        if (shelf==null) {
+            shelf = newShelf(location, name);
+        }
+        return shelf;
+    }
+
+    @Override
+    public AbstractLineItem addItem(Shelf shelf, AbstractItem item, BigDecimal quantity) {
+        for (ShelfLineItem shelfLineItem: shelf.lineItems) {
+            if (item.equals(shelfLineItem.item)) {
+                shelfLineItem.quantity.add(quantity);
+                return shelfLineItem;
+            }
+        }
+        ShelfLineItem shelfLineItem = new ShelfLineItem();
+        shelfLineItem.item = item;
+        shelfLineItem.quantity = quantity;
+        return shelfLineItem;
+    }
+
 }
 

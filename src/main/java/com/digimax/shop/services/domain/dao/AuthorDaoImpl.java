@@ -111,6 +111,5 @@ public class AuthorDaoImpl implements AuthorDao {
             author = newAuthor(null, null, authorLastName, authorFirstName);
         }
         return author;
-
     }
 }

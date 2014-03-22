@@ -3,6 +3,7 @@ package com.digimax.shop.services.bootstrap;
 import com.digimax.shop.entities.domain.*;
 import com.digimax.shop.entities.domain.invoice.ReceivingInvoice;
 import com.digimax.shop.entities.domain.invoice.lineitem.ReceivingLineItem;
+import com.digimax.shop.entities.domain.item.AbstractItem;
 import com.digimax.shop.entities.domain.item.Book;
 import com.digimax.shop.entities.user.Worker;
 import com.digimax.shop.services.domain.BookService;
@@ -15,6 +16,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 
 import java.math.BigDecimal;
 import java.util.Collection;
+import java.util.Map;
 
 /**
  * Created by jon on 2014-03-16.
@@ -49,19 +51,19 @@ public class BookStoreBootStrapServiceImpl implements BootStrapService {
             shop.brand="Memories Book Shop";
             shop.copyright="&#x00A9; 2014 Memories Book Shop.&nbsp; All rights reserved.";
             shopService.save(shop);
-            addItemsTo(shop);
+            Map<AbstractItem, String> itemLocationMap = addItemsTo(shop);
             addLocationsTo(shop);
             addWorkersTo(shop);
-            addInitialReceiptInvoiceTo(shop);
+            addInitialReceiptInvoiceTo(shop, itemLocationMap);
             shopService.save(shop);
             return true;
         }
         return false;
     }
 
-    private void addItemsTo(Shop shop) {
+    private Map<AbstractItem, String> addItemsTo(Shop shop) {
         //Items are independent of the shop
-        RipImageFolderToBooks.rip(bookService);
+        return RipImageFolderToBooks.rip(bookService);
     }
 
     private void addLocationsTo(Shop shop) {
@@ -112,7 +114,7 @@ public class BookStoreBootStrapServiceImpl implements BootStrapService {
         shop.addLocation(warehouse);
     }
 
-    private void addInitialReceiptInvoiceTo(Shop shop) {
+    private void addInitialReceiptInvoiceTo(Shop shop, Map<AbstractItem, String> itemLocationMap) {
         Receiving receiving = shop.getReceiving();
 
         ReceivingInvoice receivingInvoice = new ReceivingInvoice();
@@ -123,6 +125,7 @@ public class BookStoreBootStrapServiceImpl implements BootStrapService {
             ReceivingLineItem receivingLineItem = new ReceivingLineItem();
             receivingLineItem.quantity = BigDecimal.ONE;
             receivingLineItem.item = book;
+            receivingLineItem.locationName = itemLocationMap.get(book);
             receivingInvoice.addLineItem(receivingLineItem);
         }
         invoiceService.save(receivingInvoice);

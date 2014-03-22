@@ -1,5 +1,6 @@
 package com.digimax.shop.services;
 
+import com.digimax.shop.entities.domain.Receiving;
 import com.digimax.shop.services.bootstrap.BookStoreBootStrapServiceImpl;
 import com.digimax.shop.services.bootstrap.BootStrapService;
 import com.digimax.shop.services.domain.*;
@@ -78,6 +79,8 @@ public class DependencyModule {
         binder.bind(LocationService.class);
         binder.bind(ShopService.class);
         binder.bind(IdentityService.class);
+        binder.bind(ReceivingService.class);
+        binder.bind(ShelfService.class);
         binder.bind(UserService.class);
         binder.bind(WarehouseService.class);
     }
