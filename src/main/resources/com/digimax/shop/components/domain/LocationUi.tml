@@ -18,7 +18,7 @@
                         </p:else>
                     </t:if>
                 </a>
-                <t:loop source="location.locations" value="thisLocation">
+                <t:loop source="location.orderedLocations" value="thisLocation">
                     <a t:type="pagelink" page="location/index" context="thisLocation.id" class="list-group-item">${thisLocation.name}</a>
                 </t:loop>
             </div>

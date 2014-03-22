@@ -11,6 +11,7 @@ import java.util.*;
 /**
  * Created by jon on 2014-03-18.
  */
+@SuppressWarnings("unchecked")
 public class AbstractLocationDaoImpl implements AbstractLocationDao {
 
     @Inject

@@ -8,9 +8,7 @@ import org.apache.tapestry5.annotations.Property;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by jon on 2014-03-15.
@@ -23,6 +21,11 @@ public class AbstractLocation extends DomainObject implements Location {
     @NotNull
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "parent")
     public Set<AbstractLocation> locations = new HashSet<>();
+    public List<AbstractLocation> getOrderedLocations() {
+        List<AbstractLocation> orderedLocations = new ArrayList<>(locations);
+        Collections.sort(orderedLocations, new Compare());
+        return orderedLocations;
+    }
 
     @Property
     @ManyToOne(fetch = FetchType.EAGER)
@@ -54,5 +57,13 @@ public class AbstractLocation extends DomainObject implements Location {
     public void addInvoice(AbstractInvoice invoice) {
         invoices.add(invoice);
         invoice.location = this;
+    }
+
+
+    public static final class Compare implements Comparator<AbstractLocation> {
+        @Override
+        public int compare(AbstractLocation location1, AbstractLocation location2) {
+            return location1.name.compareTo(location2.name);
+        }
     }
 }

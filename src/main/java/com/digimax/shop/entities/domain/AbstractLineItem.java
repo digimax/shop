@@ -7,6 +7,7 @@ import org.apache.tapestry5.annotations.Property;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Comparator;
 
 /**
  * Created by jon on 2014-03-20.
@@ -44,4 +45,11 @@ public class AbstractLineItem extends DomainObject implements LineItem {
     public String getName() {
         return item==null? null: item.name;
     }
+
+    public static final class Compare implements Comparator<AbstractLineItem> {
+        @Override
+        public int compare(AbstractLineItem lineItem1, AbstractLineItem lineItem2) {
+            return lineItem1.getName().compareTo(lineItem2.getName());
+        }
+    }    
 }

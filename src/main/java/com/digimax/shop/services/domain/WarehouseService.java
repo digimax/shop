@@ -1,5 +1,7 @@
 package com.digimax.shop.services.domain;
 
+import com.digimax.shop.entities.domain.Shelf;
+import com.digimax.shop.entities.domain.Warehouse;
 import com.digimax.shop.entities.domain.invoice.ReceivingInvoice;
 
 /**
@@ -7,4 +9,5 @@ import com.digimax.shop.entities.domain.invoice.ReceivingInvoice;
  */
 public interface WarehouseService {
     void processInvoice(ReceivingInvoice receivingInvoice);
+    void processShelf(Warehouse warehouse, Shelf shelf);
 }
