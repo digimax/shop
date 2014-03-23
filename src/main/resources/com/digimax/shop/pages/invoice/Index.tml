@@ -5,4 +5,7 @@
     <t:if test="receivingInvoice">
         <span t:type="domain/invoice/receivinginvoiceui" receivingInvoice="invoice"/>
     </t:if>
+    <t:if test="warehouseInvoice">
+        <span t:type="domain/invoice/warehouseinvoiceui" warehouseInvoice="invoice"/>
+    </t:if>
 </html>

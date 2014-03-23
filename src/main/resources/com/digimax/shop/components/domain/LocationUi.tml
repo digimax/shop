@@ -22,7 +22,6 @@
                     <a t:type="pagelink" page="location/index" context="thisLocation.id" class="list-group-item">${thisLocation.name}</a>
                 </t:loop>
             </div>
-            <span t:type="domain/location/locationtool" location="location"/>
         </div>
     </div>
 

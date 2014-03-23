@@ -5,7 +5,7 @@
     <div class="btn-toolbar">
         <div class="btn-group">
             <button t:type="actionlink" t:id="receiveInvoice" t:mixins="onevent"
-                    event="keyup" refreshZone="refreshZone" type="button" class="btn btn-default">Receive Invoice to ${receivingInvoice.location?.name}</button>
+                    event="keyup" refreshZone="refreshZone" type="button" class="btn btn-default btn-sm">Receive Invoice to ${receivingInvoice.location?.name}</button>
         </div>
     </div>
 </html>

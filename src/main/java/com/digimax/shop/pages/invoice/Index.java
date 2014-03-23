@@ -1,8 +1,10 @@
 package com.digimax.shop.pages.invoice;
 
 import com.digimax.shop.entities.domain.AbstractLocation;
+import com.digimax.shop.entities.domain.Warehouse;
 import com.digimax.shop.entities.domain.invoice.AbstractInvoice;
 import com.digimax.shop.entities.domain.invoice.ReceivingInvoice;
+import com.digimax.shop.entities.domain.invoice.WarehouseInvoice;
 import org.apache.tapestry5.annotations.PageActivationContext;
 import org.apache.tapestry5.annotations.Property;
 
@@ -17,5 +19,9 @@ public class Index {
 
     public boolean isReceivingInvoice() {
         return ReceivingInvoice.class.isInstance(invoice);
+    }
+
+    public boolean isWarehouseInvoice() {
+        return WarehouseInvoice.class.isInstance(invoice);
     }
 }

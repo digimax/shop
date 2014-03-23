@@ -19,5 +19,7 @@
             </t:grid>
         </div>
     </div>
+    <span t:type="domain/location/shelftool" shelf="shelf"/>
+    <span t:type="domain/location/locationtool" location="shelf"/>
     <span t:type="domain/locationui" location="shelf"/>
 </html>

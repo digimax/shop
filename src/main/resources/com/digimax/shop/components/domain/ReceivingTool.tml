@@ -4,7 +4,7 @@
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
     <div class="btn-toolbar">
         <div class="btn-group">
-            <button type="button" class="btn btn-default btn-sm">Delete ${invoice.location?.name} Invoice</button>
+            <button t:type="actionlink" t:id="createInvoiceForWarehouse" type="button" class="btn btn-default btn-sm">Create Invoice for ${warehouse.name}</button>
         </div>
     </div>
 </html>

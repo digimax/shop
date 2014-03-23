@@ -3,5 +3,6 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
     <h4>Receiving - ${receiving.name}</h4>
+    <span t:type="domain/receivingtool" receiving="receiving"/>
     <span t:type="domain/locationui" location="receiving"/>
 </html>
