@@ -63,10 +63,10 @@ public class DependencyModule {
         binder.bind(BootStrapService.class, BookStoreBootStrapServiceImpl.class);
         binder.bind(AuthorDao.class);
         binder.bind(BookDao.class);
-        binder.bind(IdentityDao.class);
         binder.bind(AbstractInvoiceDao.class);
         binder.bind(AbstractItemDao.class);
         binder.bind(AbstractLocationDao.class);
+        binder.bind(IdentityDao.class);
         binder.bind(ShelfDao.class);
         binder.bind(ShopDao.class);
         binder.bind(StorageDao.class);
@@ -74,13 +74,14 @@ public class DependencyModule {
 
         binder.bind(AuthorService.class);
         binder.bind(BookService.class);
+        binder.bind(IdentityService.class);
         binder.bind(InvoiceService.class);
         binder.bind(ItemService.class);
         binder.bind(LocationService.class);
-        binder.bind(ShopService.class);
-        binder.bind(IdentityService.class);
         binder.bind(ReceivingService.class);
         binder.bind(ShelfService.class);
+        binder.bind(ShopService.class);
+        binder.bind(StoreService.class);
         binder.bind(UserService.class);
         binder.bind(WarehouseService.class);
     }
